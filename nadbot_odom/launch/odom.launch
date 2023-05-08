@@ -1,0 +1,16 @@
+<launch>
+    <node name="odom_publisher" pkg="nadbot_odom" type="odom_publisher.py"  output="screen">
+    </node>
+
+    <node pkg="nadbot_odom" type="wheel_encoder_publisher.py" name="lwheel_encoder_publisher">
+        <remap from="wheel_angular_vel_enc" to="lwheel_angular_vel_enc"/>
+        <remap from="wheel_tangent_vel_enc" to="lwheel_tangent_vel_enc"/>
+        <remap from="wheel_enc" to="lwheel_enc"/>
+    </node>
+
+    <node pkg="nadbot_odom" type="wheel_encoder_publisher.py" name="rwheel_encoder_publisher">
+        <remap from="wheel_angular_vel_enc" to="rwheel_angular_vel_enc"/>
+        <remap from="wheel_tangent_vel_enc" to="rwheel_tangent_vel_enc"/>
+        <remap from="wheel_enc" to="rwheel_enc"/>
+    </node>
+</launch>

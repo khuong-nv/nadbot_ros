@@ -1,0 +1,7 @@
+<launch>
+<include file="$(find nadbot_ctrl)/launch/nadbot_ctrl.launch"/>
+<include file="$(find nadbot_odom)/launch/odom.launch"/>
+<include file="$(find nadbot_des)/launch/display.launch"/>
+<include file="$(find ydlidar)/launch/lidar_view.launch"/>
+<include file="$(find nadbot_nav)/launch/nadbot_amcl.launch"/>
+</launch>

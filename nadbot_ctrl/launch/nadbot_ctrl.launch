@@ -1,0 +1,15 @@
+<launch>
+    <node name="motor_rpm_left" pkg="nadbot_ctrl" type="motor_rpm.py"  output="screen">
+        <remap from="wheel_tangent_vel_target" to="/lwheel_vtarget"/>
+        <remap from="wheel_angular_vel_enc" to="/lwheel_angular_vel_enc"/>
+        <remap from="wheel_motor_cmd_pub" to="/lwheel_motor_cmd_pub"/>
+    </node>
+
+    <node name="motor_rpm_right" pkg="nadbot_ctrl" type="motor_rpm.py"  output="screen">
+        <remap from="wheel_tangent_vel_target" to="/rwheel_vtarget"/>
+        <remap from="wheel_angular_vel_enc" to="/rwheel_angular_vel_enc"/>
+        <remap from="wheel_motor_cmd_pub" to="/rwheel_motor_cmd_pub"/>
+    </node>
+
+    <node pkg="nadbot_ctrl" type="twist_to_motors.py" name="twist_to_motors"/>
+</launch>
